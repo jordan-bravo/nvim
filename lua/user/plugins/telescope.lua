@@ -18,7 +18,19 @@ return {
             },
           },
         },
+        -- pickers = {
+        --   find_files = {
+        --     hidden = true,
+        --   },
+        -- },
       })
+      
+      -- TODO: Make telescope search all files, including hidden files and those listed in .gitignore.  Default is to exclude those.
+      -- local find_files = function()
+      --   require("telescope.builtin").find_files({
+      --     find_command = { "rg", "--files", "--hidden", },
+      --   })
+      -- end
 
       -- Enable telescope fzf native, if installed
       pcall(require("telescope").load_extension, "fzf")

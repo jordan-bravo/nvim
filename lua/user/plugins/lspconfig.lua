@@ -32,7 +32,17 @@ return {
     capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
     lspconfig.tsserver.setup({ on_attach = on_attach })
+    -- Python
     lspconfig.pyright.setup({ on_attach = on_attach })
+    lspconfig.ruff_lsp.setup({
+      on_attach = on_attach,
+      init_options = {
+        settings = {
+          -- Any extra CLI arguments for ruff go here.
+          args = {},
+        }
+      }
+    })
     lspconfig.rust_analyzer.setup({
       -- Server-specific settings. See `:help lspconfig-setup`
       on_attach = on_attach,
