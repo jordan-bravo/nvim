@@ -35,6 +35,11 @@ return {
     lspconfig.tsserver.setup({
       on_attach = on_attach,
       capabilities = capabilities,
+      settings = {
+        completions = {
+          completeFunctionCalls = true
+        }
+      }
     })
     -- Lua
     lspconfig.lua_ls.setup({
@@ -49,6 +54,13 @@ return {
             version = 'LuaJIT'
           },
           telemetry = { enable = false },
+          completion = {
+            callSnippet = 'Replace',
+          },
+          hint = {
+            enable = true,
+            arrayIndex = 'Disable',
+          },
           diagnostics = {
             -- Get the language server to recognize the "vim" global variabe
             globals = { "vim" },
