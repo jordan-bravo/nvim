@@ -96,11 +96,11 @@ return {
     -- TODO: enable Black formatter
     lspconfig.pyright.setup({
       on_attach = on_attach,
-      -- capabilities = capabilities,
+      capabilities = capabilities,
     })
     lspconfig.ruff_lsp.setup({
       on_attach = on_attach,
-      -- capabilities = capabilities,
+      capabilities = capabilities,
       init_options = {
         settings = {
           -- Any extra CLI arguments for ruff go here.
