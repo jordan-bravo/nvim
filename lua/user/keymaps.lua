@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>v", "<Plug>(toggle-lsp-diag-vtext)", { silent = tru
 
 -- LSP related actions:
 -- Format
-vim.keymap.set("n", "<leader>lf", ":lua vim.lsp.buf.format()<CR>")
+vim.keymap.set("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })

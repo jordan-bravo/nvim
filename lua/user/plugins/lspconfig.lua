@@ -4,12 +4,12 @@
 --  The configuration is done below. Search for lspconfig to find it below.
 return {
   -- LSP Configuration & Plugins
-  -- "neovim/nvim-lspconfig",
-  "jose-elias-alvarez/null-ls.nvim",
+  "neovim/nvim-lspconfig",
+  -- "jose-elias-alvarez/null-ls.nvim",
   dependencies = {
     -- Useful status updates for LSP
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    -- { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+    { "j-hui/fidget.nvim", tag = "legacy", opts = {} },
     -- "folke/neodev.nvim",
     "nvim-lua/plenary.nvim",
     -- "lukas-reineke/lsp-format.nvim",
@@ -18,7 +18,7 @@ return {
 
   },
   config = function()
-    -- local lspconfig = require("lspconfig")
+    local lspconfig = require("lspconfig")
     -- require("lsp-format").setup({})
     -- require("neodev").setup()
 
@@ -72,21 +72,21 @@ return {
     -- })
 
     -- Python
-    -- TODO: enable Black formatter
-    -- lspconfig.pyright.setup({
-    --   on_attach = require("lsp-format").on_attach,
-    --   -- capabilities = capabilities,
-    -- })
-    -- lspconfig.ruff_lsp.setup({
-    --   on_attach = require("lsp-format").on_attach,
-    --   -- capabilities = capabilities,
-    --   init_options = {
-    --     settings = {
-    --       -- Any extra CLI arguments for ruff go here.
-    --       args = {},
-    --     }
-    --   }
-    -- })
+    -- TODO: enable Ruff or Black formatter
+    lspconfig.pyright.setup({
+      -- on_attach = require("lsp-format").on_attach,
+      -- capabilities = capabilities,
+    })
+    lspconfig.ruff_lsp.setup({
+      -- on_attach = require("lsp-format").on_attach,
+      -- capabilities = capabilities,
+      init_options = {
+        settings = {
+          -- Any extra CLI arguments for ruff go here.
+          args = {},
+        }
+      }
+    })
     -- Rust
     -- lspconfig.rust_analyzer.setup({
     --   -- Server-specific settings. See `:help lspconfig-setup`
@@ -102,38 +102,39 @@ return {
     --   },
     -- })
 
-    local null_ls = require("null-ls")
-    local formatting = null_ls.builtins.formatting
-    local diagnostics = null_ls.builtins.diagnostics
-    local code_actions = null_ls.builtins.code_actions
-    local completion = null_ls.builtins.completion
-    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-    null_ls.setup({
-      sources = {
-        -- JavaScript, TypeScript
-        -- formatting.prettier,
-
-        -- Lua
-        -- formatting.stylua,
-        -- completion.luasnip,
-        -- diagnostics.luacheck,
-
-        -- Nix
-        -- formatting.nixpkgs_fmt,
-
-        -- Python
-        -- formatting.black, -- .with({
-        --   extra_args = { "--line-length=120" },
-        -- }),
-        diagnostics.ruff,
-        formatting.ruff,
-
-        -- Refactoring for Go, Javascript, Lua, Python, TypeScript
-        -- code_actions.refactoring,
-
-        -- Rust
-        -- formatting.rustfmt,
-      },
-    })
+    -- null-ls 
+    -- local null_ls = require("null-ls")
+    -- local formatting = null_ls.builtins.formatting
+    -- local diagnostics = null_ls.builtins.diagnostics
+    -- local code_actions = null_ls.builtins.code_actions
+    -- local completion = null_ls.builtins.completion
+    -- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+    -- null_ls.setup({
+    --   sources = {
+    --     -- JavaScript, TypeScript
+    --     -- formatting.prettier,
+    --
+    --     -- Lua
+    --     -- formatting.stylua,
+    --     -- completion.luasnip,
+    --     -- diagnostics.luacheck,
+    --
+    --     -- Nix
+    --     -- formatting.nixpkgs_fmt,
+    --
+    --     -- Python
+    --     -- formatting.black, -- .with({
+    --     --   extra_args = { "--line-length=120" },
+    --     -- }),
+    --     diagnostics.ruff,
+    --     formatting.ruff,
+    --
+    --     -- Refactoring for Go, Javascript, Lua, Python, TypeScript
+    --     -- code_actions.refactoring,
+    --
+    --     -- Rust
+    --     -- formatting.rustfmt,
+    --   },
+    -- })
   end
 }
