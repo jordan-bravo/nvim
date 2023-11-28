@@ -1,1 +1,44 @@
 # Jordan Bravo's Neovim config
+
+## TODO
+
+- Configure language tools:
+  - [x] Python
+    - [x] Completions
+    - [x] Type checking
+    - [x] Formatting
+    - [x] Linting
+  - [x] Lua
+    - [x] Completions
+    - [x] Type checking
+    - [x] Formatting
+    - [ ] Linting (luacheck shows error accessing vim global variable)
+  - [ ] Nix
+    - [ ] Completions
+    - [ ] Type checking
+    - [ ] Formatting
+    - [ ] Linting
+  - [ ] TypeScript
+    - [ ] Completions
+    - [ ] Type checking
+    - [ ] Formatting
+    - [ ] Linting
+  - [ ] Rust
+    - [ ] Completions
+    - [ ] Type checking
+    - [ ] Formatting
+    - [ ] Linting
+  - [ ] Go
+    - [ ] Completions
+    - [ ] Type checking
+    - [ ] Formatting
+    - [ ] Linting
+  - [ ] Shell
+    - [ ] Completions
+    - [ ] Type checking
+    - [ ] Formatting
+    - [ ] Linting
+- Make telescope search all files, including hidden files and those listed in .gitignore. By default telescope excludes those
+- Choose and configure a session manager
+  - Look into [auto-session](https://github.com/rmagatti/auto-session) with telescope integration via [session-lens](https://github.com/rmagatti/session-lens)
+- Look into the plugin [neodev](https://github.com/folke/neodev.nvim), which helps editing nvim specific lua files
