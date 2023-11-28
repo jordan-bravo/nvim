@@ -38,7 +38,7 @@
     - [ ] Type checking
     - [ ] Formatting
     - [ ] Linting
-- Make telescope search all files, including hidden files and those listed in .gitignore. By default telescope excludes those
+- Make telescope search all files, including hidden files and those listed in .gitignore. By default telescope excludes those. See [docs](https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#file-and-text-search-in-hidden-files-and-directories)
 - Choose and configure a session manager
   - Look into [auto-session](https://github.com/rmagatti/auto-session) with telescope integration via [session-lens](https://github.com/rmagatti/session-lens)
 - Look into the plugin [neodev](https://github.com/folke/neodev.nvim), which helps editing nvim specific lua files
