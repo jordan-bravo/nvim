@@ -23,11 +23,11 @@ return {
         yaml = { { "prettierd", "prettier" } },
         markdown = { { "prettierd", "prettier" } },
       },
-      format_on_save = {
-        lsp_fallback = true,
-        async = false,
-        timeout_ms = 500,
-      },
+      -- format_on_save = {
+      --   lsp_fallback = true,
+      --   async = false,
+      --   timeout_ms = 500,
+      -- },
     })
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       conform.format({
