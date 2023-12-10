@@ -45,6 +45,23 @@ return {
     --   on_attach = on_attach,
     -- })
 
+    -- configure golang servers
+    lspconfig["gopls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = {
+        gopls = {
+          gofumpt = true,
+          completeUnimported = true,
+          usePlaceholders = true,
+          analyses = {
+            unusedparams = true,
+            unusedvariable = true,
+          },
+        },
+      },
+    })
+
     -- configure tailwindcss server
     -- lspconfig["tailwindcss"].setup({
     --   capabilities = capabilities,
