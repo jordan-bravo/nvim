@@ -12,32 +12,33 @@
     - [x] Completions
     - [x] Type checking
     - [x] Formatting
-    - [ ] Linting (luacheck shows error accessing vim global variable)
+    - [x] Linting (luacheck shows error accessing vim global variable)
   - [ ] Nix
-    - [ ] Completions
+    - [x] Completions
     - [ ] Type checking
     - [ ] Formatting
     - [ ] Linting
-  - [ ] TypeScript
-    - [ ] Completions
-    - [ ] Type checking
-    - [ ] Formatting
+  - [x] TypeScript
+    - [x] Completions
+    - [x] Type checking
+    - [x] Formatting
     - [ ] Linting
   - [ ] Rust
     - [ ] Completions
     - [ ] Type checking
     - [ ] Formatting
     - [ ] Linting
-  - [ ] Go
-    - [ ] Completions
-    - [ ] Type checking
-    - [ ] Formatting
-    - [ ] Linting
+  - [x] Go
+    - [x] Completions
+    - [x] Type checking
+    - [x] Formatting
+    - [x] Linting
   - [ ] Shell
     - [ ] Completions
     - [ ] Type checking
     - [ ] Formatting
     - [ ] Linting
+- In Nix files, enable formatting with command (space, m, p).
 - Make telescope search all files, including hidden files and those listed in .gitignore. By default telescope excludes those. See [docs](https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#file-and-text-search-in-hidden-files-and-directories)
 - Choose and configure a session manager
   - Look into [auto-session](https://github.com/rmagatti/auto-session) with telescope integration via [session-lens](https://github.com/rmagatti/session-lens)

@@ -19,31 +19,30 @@ return {
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
+    -- Languages that use the vscode-langservers-extracted (vle) language server
+    -- need a different capabilities object
+    local vle_capabilities = vim.lsp.protocol.make_client_capabilities()
+    vle_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
     -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- configure html server
-    -- lspconfig["html"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    -- })
-
-    -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
-      capabilities = capabilities,
+    -- configure css server
+    lspconfig["cssls"].setup({
+      capabilities = vle_capabilities,
       on_attach = on_attach,
     })
 
-    -- configure css server
-    -- lspconfig["cssls"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    -- })
+    -- configure emmet language server
+    lspconfig["emmet_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+    })
 
     -- configure golang servers
     lspconfig["gopls"].setup({
@@ -62,35 +61,6 @@ return {
       },
     })
 
-    -- configure tailwindcss server
-    -- lspconfig["tailwindcss"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    -- })
-
-    -- configure svelte server
-    -- lspconfig["svelte"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = function(client, bufnr)
-    --     on_attach(client, bufnr)
-    --
-    --     vim.api.nvim_create_autocmd("BufWritePost", {
-    --       pattern = { "*.js", "*.ts" },
-    --       callback = function(ctx)
-    --         if client.name == "svelte" then
-    --           client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-    --         end
-    --       end,
-    --     })
-    --   end,
-    -- })
-
-    -- configure prisma orm server
-    -- lspconfig["prismals"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    -- })
-
     -- configure graphql language server
     -- lspconfig["graphql"].setup({
     --   capabilities = capabilities,
@@ -98,27 +68,10 @@ return {
     --   filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
     -- })
 
-    -- configure emmet language server
-    -- lspconfig["emmet_ls"].setup({
-    --   capabilities = capabilities,
-    --   on_attach = on_attach,
-    --   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-    -- })
-
-    -- configure python servers
-    lspconfig["pyright"].setup({
-      capabilities = capabilities,
+    -- configure html server
+    lspconfig["html"].setup({
+      capabilities = vle_capabilities,
       on_attach = on_attach,
-    })
-    lspconfig["ruff_lsp"].setup({
-      -- capabilities = capabilities,
-      on_attach = on_attach,
-      init_options = {
-        settings = {
-          -- Any extra CLI arguments for `ruff` go here.
-          args = {},
-        },
-      },
     })
 
     -- configure lua server (with special settings)
@@ -141,6 +94,73 @@ return {
           },
         },
       },
+    })
+
+    -- configure nix language server
+    lspconfig["nil_ls"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      autostart = true,
+      -- capabilities = caps,
+      -- cmd = { lsp_path },
+      settings = {
+        ["nil"] = {
+          formatting = {
+            command = { "nixpkgs-fmt" },
+          },
+        },
+      },
+    })
+
+    -- configure prisma orm server
+    -- lspconfig["prismals"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    -- })
+
+    -- configure python servers
+    lspconfig["pyright"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+    lspconfig["ruff_lsp"].setup({
+      -- capabilities = capabilities,
+      on_attach = on_attach,
+      init_options = {
+        settings = {
+          -- Any extra CLI arguments for `ruff` go here.
+          args = {},
+        },
+      },
+    })
+
+    -- configure svelte server
+    -- lspconfig["svelte"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = function(client, bufnr)
+    --     on_attach(client, bufnr)
+    --
+    --     vim.api.nvim_create_autocmd("BufWritePost", {
+    --       pattern = { "*.js", "*.ts" },
+    --       callback = function(ctx)
+    --         if client.name == "svelte" then
+    --           client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
+    --         end
+    --       end,
+    --     })
+    --   end,
+    -- })
+
+    -- configure tailwindcss server
+    lspconfig["tailwindcss"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure typescript server with plugin
+    lspconfig["tsserver"].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
     })
   end,
 }
