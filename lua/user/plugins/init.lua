@@ -27,4 +27,14 @@ return {
 
   -- "gc" to comment visual regions/lines
   { "numToStr/Comment.nvim", opts = {} },
+
+  -- Debugger configs
+  "mfussenegger/nvim-dap",
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+  }
 }

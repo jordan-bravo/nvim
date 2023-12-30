@@ -109,4 +109,20 @@ M.on_attach = function(client, bufnr)
   vim.keymap.set("n", "<leader>wl", list_workspace_folders(), { buffer = bufnr, desc = opts.desc })
 
 end
+M.dap = {
+  plugin = true,
+  n = {
+    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
+  },
+}
+M.dap_python = {
+  plugin = true,
+  n = {
+    ["<leader>dpr"] = {
+      function()
+        require('dap-python').test_method()
+      end,
+    },
+  },
+}
 return M
