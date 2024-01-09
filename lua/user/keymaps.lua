@@ -106,11 +106,11 @@ M.on_attach = function(client, bufnr)
   opts.desc = "[W]orkspace [R]emove Folder"
   vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { buffer = bufnr, desc = opts.desc })
 
-  local list_workspace_folders = function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end
-  opts.desc = "[W]orkspace [L]ist Folders"
-  vim.keymap.set("n", "<leader>wl", list_workspace_folders(), { buffer = bufnr, desc = opts.desc })
+  -- local list_workspace_folders = function()
+  --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  -- end
+  -- opts.desc = "[W]orkspace [L]ist Folders"
+  -- vim.keymap.set("n", "<leader>wl", list_workspace_folders(), { buffer = bufnr, desc = opts.desc })
 end
 M.dap = {
   plugin = true,
