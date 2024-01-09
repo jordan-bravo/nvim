@@ -12,7 +12,7 @@ return {
   {
     "mfussenegger/nvim-dap-python",
     ft = "python",
-    dependencies = "mfussenegger/nvim-dap", "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "rcarriga/nvim-dap-ui", },
     config = function(_, opts)
       local path = "~/.virtualenv/bin/python"
       require("dap-python").setup(path)
@@ -21,7 +21,7 @@ return {
   },
   {
     "rcarriga/nvim-dap-ui",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = { "mfussenegger/nvim-dap", },
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
@@ -44,6 +44,8 @@ return {
         },
       })
       -- Debugging keymaps
+      -- vim.api.nvim_set_keymap("n", "<leader>dt", ":DapUiToggle<CR>", {noremap=true})
+      vim.keymap.set("n", "<leader>dt", dapui.toggle)
       vim.keymap.set("n", "<leader>dc", dap.continue)
       vim.keymap.set("n", "<leader>di", dap.step_into)
       vim.keymap.set("n", "<leader>do", dap.step_over)
