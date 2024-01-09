@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>v", "<Plug>(toggle-lsp-diag-vtext)", { silent = tru
 
 -- LSP related actions:
 -- Format
-vim.keymap.set("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>")
+-- vim.keymap.set("n", "<leader>f", ":lua vim.lsp.buf.format()<CR>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
@@ -82,10 +82,12 @@ M.on_attach = function(client, bufnr)
   vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
   opts.desc = "[D]ocument [S]ymbols"
-  vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols, { buffer = bufnr, desc = opts.desc })
+  vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols,
+    { buffer = bufnr, desc = opts.desc })
 
   opts.desc = "[W]orkspace [S]ymbols"
-  vim.keymap.set("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, { buffer = bufnr, desc = opts.desc })
+  vim.keymap.set("n", "<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols,
+    { buffer = bufnr, desc = opts.desc })
 
   -- See `:help K` for why this keymap
   opts.desc = "Hover Documentation"
@@ -109,12 +111,11 @@ M.on_attach = function(client, bufnr)
   end
   opts.desc = "[W]orkspace [L]ist Folders"
   vim.keymap.set("n", "<leader>wl", list_workspace_folders(), { buffer = bufnr, desc = opts.desc })
-
 end
 M.dap = {
   plugin = true,
   n = {
-    ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
+    ["<leader>b"] = { "<cmd> DapToggleBreakpoint <CR>" },
   },
 }
 M.dap_python = {
