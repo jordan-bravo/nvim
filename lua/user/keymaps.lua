@@ -61,7 +61,7 @@ M.on_attach = function(client, bufnr)
   vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
   opts.desc = "Smart rename"
-  vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+  vim.keymap.set("n", "<leader>rs", vim.lsp.buf.rename, opts) -- smart rename
 
   opts.desc = "Show buffer diagnostics"
   vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
@@ -79,7 +79,7 @@ M.on_attach = function(client, bufnr)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
   opts.desc = "Restart LSP"
-  vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+  vim.keymap.set("n", "<leader>rl", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
   opts.desc = "[D]ocument [S]ymbols"
   vim.keymap.set("n", "<leader>ds", require("telescope.builtin").lsp_document_symbols,
