@@ -6,10 +6,10 @@
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Toggle File Explorer
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
 
 -- Copy to end of line
-vim.keymap.set("n", "Y", "y$")
+vim.keymap.set("n", "Y", "y$", { silent = true })
 
 -- Toggle diagnostic virtual text
 vim.keymap.set("n", "<leader>v", "<Plug>(toggle-lsp-diag-vtext)", { silent = true, desc = "Toggle Virtual Text" })
@@ -22,7 +22,7 @@ vim.keymap.set("n", "<leader>v", "<Plug>(toggle-lsp-diag-vtext)", { silent = tru
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Close current buffer
-vim.keymap.set("n", "<leader>k", ":bd<CR>")
+vim.keymap.set("n", "<leader>k", ":bd<CR>", { silent = true })
 
 -- Remap for dealing with word wrap
 vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -33,8 +33,8 @@ vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set("n", "<Tab>", ":bnext<CR>", { silent = true })
 -- vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true })
 vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { silent = true })
-vim.keymap.set("n", "<C-l>", "<C-w>l")
-vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
+vim.keymap.set("n", "<C-h>", "<C-w>h", { silent = true })
 
 -- Buffer dependent keymaps
 local opts = { noremap = true, silent = true }
