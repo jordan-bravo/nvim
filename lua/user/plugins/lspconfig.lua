@@ -97,20 +97,24 @@ return {
     })
 
     -- configure nix language server
-    lspconfig["nil_ls"].setup({
-      capabilities = capabilities,
-      on_attach = on_attach,
-      autostart = true,
-      -- capabilities = caps,
-      -- cmd = { lsp_path },
-      settings = {
-        ["nil"] = {
-          formatting = {
-            command = { "nixpkgs-fmt" },
-          },
-        },
-      },
-    })
+    -- nixd
+    lspconfig["nixd"].setup({})
+
+    -- -- nil_ls
+    -- lspconfig["nil_ls"].setup({
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    --   autostart = true,
+    --   -- capabilities = caps,
+    --   -- cmd = { lsp_path },
+    --   settings = {
+    --     ["nil"] = {
+    --       formatting = {
+    --         command = { "nixpkgs-fmt" },
+    --       },
+    --     },
+    --   },
+    -- })
 
     -- configure prisma orm server
     -- lspconfig["prismals"].setup({
