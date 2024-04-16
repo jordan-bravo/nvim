@@ -2,6 +2,9 @@
 
 ## TODO
 
+- [ ] Configure lazy.nvim
+- [ ] Configure Neotree
+- [ ] Configure Telescope
 - Configure language tools:
   - [x] Python
     - [x] Completions
