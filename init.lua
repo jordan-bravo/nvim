@@ -1,8 +1,8 @@
 -- nvim/init.lua
 
 require("jordan.options")
--- require("jordan.keymaps")
--- require("jordan.lazy")
+require("jordan.keymaps")
+require("jordan.lazy")
 
 -- old
 -- require("user.options")
