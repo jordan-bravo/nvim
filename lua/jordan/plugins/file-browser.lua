@@ -16,4 +16,13 @@ return {
       desc = 'Explorer NeoTree (Root Dir)',
     },
   },
+  opts = {
+    filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+        hide_hidden = false,
+      },
+    },
+  },
 }

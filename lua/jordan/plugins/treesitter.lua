@@ -4,6 +4,9 @@ return {
   config = function()
     local configs = require('nvim-treesitter.configs')
     configs.setup({
+      sync_install = false,
+      highlight = { enable = true },
+      indent = { enable = true },
       ensure_installed = {
         'bash',
         'c',
@@ -46,6 +49,7 @@ return {
         'ocaml',
         'prisma',
         'python',
+        'query',
         'regex',
         'roc',
         'rust',
