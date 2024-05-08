@@ -6,7 +6,7 @@ return {
     {
       '<leader>f',
       function()
-        require('conform').format { async = true, lsp_fallback = true }
+        require('conform').format({ async = true, lsp_fallback = true })
       end,
       mode = '',
       desc = '[F]ormat buffer',
@@ -25,20 +25,22 @@ return {
       }
     end,
     formatters_by_ft = {
-      javascript = { { "prettierd", "prettier"} },
-      typescript = { { "prettierd", "prettier"} },
-      javascriptreact = { { "prettierd", "prettier"} },
-      typescriptreact = { { "prettierd", "prettier"} },
-      svelte = { { "prettierd", "prettier"} },
-      css = { { "prettierd", "prettier"} },
-      html = { { "prettierd", "prettier"} },
-      json = { { "prettierd", "prettier"} },
-      yaml = { { "prettierd", "prettier"} },
-      markdown = { { "prettierd", "prettier"} },
-      graphql = { { "prettierd", "prettier"} },
-      lua = { "stylua" },
-      -- python = { "isort", "black" },
-      -- rust = { "" },
+      javascript = { { 'prettierd', 'prettier' } },
+      typescript = { { 'prettierd', 'prettier' } },
+      javascriptreact = { { 'prettierd', 'prettier' } },
+      typescriptreact = { { 'prettierd', 'prettier' } },
+      svelte = { { 'prettierd', 'prettier' } },
+      css = { { 'prettierd', 'prettier' } },
+      html = { { 'prettierd', 'prettier' } },
+      json = { { 'prettierd', 'prettier' } },
+      yaml = { { 'prettierd', 'prettier' } },
+      markdown = { { 'prettierd', 'prettier' } },
+      graphql = { { 'prettierd', 'prettier' } },
+      go = { 'gofmt' },
+      lua = { 'stylua' },
+      nix = { 'nixpkgs-fmt' },
+      python = { 'ruff_fix', 'ruff_format' },
+      rust = { 'rustfmt' },
     },
   },
 }

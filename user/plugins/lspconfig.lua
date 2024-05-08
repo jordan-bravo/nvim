@@ -1,20 +1,20 @@
 -- user/plugins/lspconfig.lua
 
 return {
-  "neovim/nvim-lspconfig",
-  event = { "BufReadPre", "BufNewFile" },
+  'neovim/nvim-lspconfig',
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    { "antosha417/nvim-lsp-file-operations", config = true },
+    'hrsh7th/cmp-nvim-lsp',
+    { 'antosha417/nvim-lsp-file-operations', config = true },
   },
   config = function()
     -- import lspconfig plugin
-    local lspconfig = require("lspconfig")
+    local lspconfig = require('lspconfig')
 
     -- import cmp-nvim-lsp plugin
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
-    local on_attach = require("user.keymaps").on_attach
+    local on_attach = require('user.keymaps').on_attach
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
@@ -25,27 +25,27 @@ return {
     vle_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
     -- Change the Diagnostic symbols in the sign column (gutter)
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    local signs = { Error = ' ', Warn = ' ', Hint = '󰠠 ', Info = ' ' }
     for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+      local hl = 'DiagnosticSign' .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
     end
 
     -- configure css server
-    lspconfig["cssls"].setup({
+    lspconfig['cssls'].setup({
       capabilities = vle_capabilities,
       on_attach = on_attach,
     })
 
     -- configure emmet language server
-    lspconfig["emmet_ls"].setup({
+    lspconfig['emmet_ls'].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+      filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
     })
 
     -- configure golang servers
-    lspconfig["gopls"].setup({
+    lspconfig['gopls'].setup({
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
@@ -69,13 +69,13 @@ return {
     -- })
 
     -- configure html server
-    lspconfig["html"].setup({
+    lspconfig['html'].setup({
       capabilities = vle_capabilities,
       on_attach = on_attach,
     })
 
     -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup({
+    lspconfig['lua_ls'].setup({
       -- TODO: Research the plugin neodev, which helps editing nvim specific lua files
       capabilities = capabilities,
       on_attach = on_attach,
@@ -83,13 +83,13 @@ return {
         Lua = {
           -- make the language server recognize "vim" global
           diagnostics = {
-            globals = { "vim" },
+            globals = { 'vim' },
           },
           workspace = {
             -- make language server aware of runtime files
             library = {
-              [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-              [vim.fn.stdpath("config") .. "/lua"] = true,
+              [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+              [vim.fn.stdpath('config') .. '/lua'] = true,
             },
           },
         },
@@ -98,7 +98,7 @@ return {
 
     -- configure nix language server
     -- nixd
-    lspconfig["nixd"].setup({})
+    lspconfig['nixd'].setup({})
 
     -- -- nil_ls
     -- lspconfig["nil_ls"].setup({
@@ -123,11 +123,11 @@ return {
     -- })
 
     -- configure python servers
-    lspconfig["pyright"].setup({
+    lspconfig['pyright'].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
-    lspconfig["ruff_lsp"].setup({
+    lspconfig['ruff_lsp'].setup({
       -- capabilities = capabilities,
       on_attach = on_attach,
       init_options = {
@@ -156,13 +156,13 @@ return {
     -- })
 
     -- configure tailwindcss server
-    lspconfig["tailwindcss"].setup({
+    lspconfig['tailwindcss'].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
     -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
+    lspconfig['tsserver'].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })

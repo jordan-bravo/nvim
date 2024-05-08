@@ -1,5 +1,5 @@
 return {
-  "Mofiqul/vscode.nvim",
+  'Mofiqul/vscode.nvim',
   config = function()
     -- vim.o.background = 'dark'
     local colors = require('vscode.colors').get_colors()
@@ -19,10 +19,10 @@ return {
       group_overrides = {
         -- this supports the same val table as vim.api.nvim_set_hl
         -- use colors from this colorscheme by requiring vscode.colors!
-        Cursor = { fg=colors.vscDarkBlue, bg=colors.vscLightGreen, bold=true },
+        Cursor = { fg = colors.vscDarkBlue, bg = colors.vscLightGreen, bold = true },
       },
     })
     -- Load the theme without affecting devicon colors
-    vim.cmd.colorscheme("vscode")
+    vim.cmd.colorscheme('vscode')
   end,
 }
