@@ -16,7 +16,7 @@ return {
       python = { 'ruff' }, -- stdin = true
       -- luacheck is currently disabled because I need to figure out how to solve the issue where
       -- it's showing the lint warning: accessing undefined variable 'vim'
-      -- lua = { "luacheck" }, -- stdin = true
+      lua = { 'luacheck' }, -- stdin = true
     }
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })
     vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave', 'TextChanged' }, {
