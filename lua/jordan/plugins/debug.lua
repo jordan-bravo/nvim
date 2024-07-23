@@ -81,6 +81,7 @@ return {
             console = 'integratedTerminal',
             internalConsoleOptions = 'neverOpen',
           },
+          -- The following is for being able to share debug config with vscode
           {
             type = 'pwa-chrome',
             request = 'launch',

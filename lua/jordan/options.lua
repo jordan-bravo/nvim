@@ -11,6 +11,7 @@ vim.opt.relativenumber = true -- show relative line numbers
 vim.opt.mouse = 'a' -- enables mouse
 vim.opt.showmode = false -- already shown in status line
 vim.opt.breakindent = true -- wrapped lines are visually indented
+vim.opt.linebreak = true -- wrap long lines between words rather than mid-word
 vim.opt.undofile = true -- save undo history
 vim.opt.ignorecase = true -- case insensitive search
 vim.opt.smartcase = true -- case sensitive search if search contains uppercase
@@ -19,7 +20,7 @@ vim.opt.updatetime = 250 -- decrease update time for swap file autosave and Curs
 vim.opt.timeoutlen = 300 -- mapped sequence wait time, e.g. which-key
 vim.opt.splitright = true -- default vertical split to the right
 vim.opt.splitbelow = true -- default split to the bottom
-vim.opt.list = true -- sets how to display certain whitespace chars
+vim.opt.list = true -- sets how to display certain whitespace chars. see next line
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.opt.inccommand = 'split' -- live substitution preview while typing
 vim.opt.cursorline = true -- show which line the cursor is on
