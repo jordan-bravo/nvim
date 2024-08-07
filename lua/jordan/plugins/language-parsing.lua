@@ -47,7 +47,7 @@ return {
           'markdown_inline',
           'meson',
           'nix',
-          'norg',
+          -- 'norg', -- disabled because of compilation error
           'ocaml',
           'prisma',
           'python',
