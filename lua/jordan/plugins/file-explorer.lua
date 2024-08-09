@@ -17,6 +17,18 @@ return {
     },
   },
   opts = {
+    -- default values
+    -- default_component_configs = {
+    --   indent = {
+    --     with_markers = true,
+    --     indent_marker = '│',
+    --     last_indent_marker = '└',
+    --     highlight = 'NeoTreeIndentMarker',
+    --     -- The help section says the following but doesn't give any more info:
+    --     -- To change highlight of indent markers, you need configure `NeoTreeIndentMarker`
+    --     -- highlight group. By default, it refers to `Normal` highlight.
+    --   },
+    -- },
     filesystem = {
       filtered_items = {
         hide_dotfiles = false,
