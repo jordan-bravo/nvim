@@ -55,8 +55,21 @@ M.on_attach = function(client, bufnr)
   opts.desc = 'Show LSP type definitions'
   vim.keymap.set('n', 'gt', '<cmd>Telescope lsp_type_definitions<CR>', opts) -- show lsp type definitions
 
-  opts.desc = 'See available code actions'
+  opts.desc = 'See available [c]ode [a]ctions'
   vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+
+  -- Trying to set this here causes an error so instead it's set in plugins/format.lua
+  -- opts.desc = '[F]ormat [c]ode in current buffer'
+  -- vim.keymap.set({ 'n', 'v' }, '<leader>fc', require('conform').format({ async = true, lsp_fallback = true }), opts) -- run code formatter
+
+  opts.desc = '[F]ormat-on-save [e]nable'
+  vim.keymap.set({ 'n', 'v' }, '<leader>fe', '<cmd>FormatEnable<CR>', opts) -- enable format on save
+
+  opts.desc = '[F]ormat-on-save [d]isable'
+  vim.keymap.set({ 'n', 'v' }, '<leader>fd', '<cmd>FormatDisable<CR>', opts) -- disable format on save
+
+  opts.desc = 'Close buffer'
+  vim.keymap.set({ 'n', 'v' }, '<leader>p', '<cmd>bd<cr>', opts) -- close current buffer
 
   opts.desc = 'Smart rename'
   vim.keymap.set('n', '<leader>rs', vim.lsp.buf.rename, opts) -- smart rename
