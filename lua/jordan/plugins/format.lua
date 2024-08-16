@@ -19,6 +19,8 @@ end, {
   desc = 'Re-enable autoformat-on-save',
 })
 
+local prettier = { 'prettierd', 'prettier', stop_after_first = true }
+
 return {
   -- Autoformat
   'stevearc/conform.nvim',
@@ -50,17 +52,17 @@ return {
       }
     end,
     formatters_by_ft = {
-      javascript = { { 'prettierd', 'prettier' } },
-      typescript = { { 'prettierd', 'prettier' } },
-      javascriptreact = { { 'prettierd', 'prettier' } },
-      typescriptreact = { { 'prettierd', 'prettier' } },
-      svelte = { { 'prettierd', 'prettier' } },
-      css = { { 'prettierd', 'prettier' } },
-      html = { { 'prettierd', 'prettier' } },
-      json = { { 'prettierd', 'prettier' } },
-      yaml = { { 'prettierd', 'prettier' } },
-      markdown = { { 'prettierd', 'prettier' } },
-      graphql = { { 'prettierd', 'prettier' } },
+      javascript = prettier,
+      typescript = prettier,
+      javascriptreact = prettier,
+      typescriptreact = prettier,
+      svelte = prettier,
+      css = prettier,
+      html = prettier,
+      json = prettier,
+      yaml = prettier,
+      markdown = prettier,
+      graphql = prettier,
       go = { 'gofmt' },
       lua = { 'stylua' },
       nix = { 'nixpkgs-fmt' },
