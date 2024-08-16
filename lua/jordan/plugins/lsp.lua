@@ -118,7 +118,8 @@ return {
       -- })
 
       -- configure python servers
-      lspconfig['basedpyright'].setup({
+      -- lspconfig['basedpyright'].setup({
+      lspconfig['pyright'].setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
