@@ -40,6 +40,9 @@ local M = {}
 M.on_attach = function(client, bufnr)
   opts.buffer = bufnr
 
+  opts.desc = 'Close current buffer'
+  vim.keymap.set('n', '<leader>p', ':bd<CR>', { silent = true }) -- Close current buffer
+
   opts.desc = 'Show LSP references'
   vim.keymap.set('n', 'gR', '<cmd>Telescope lsp_references<CR>', opts) -- show definition, references
 
