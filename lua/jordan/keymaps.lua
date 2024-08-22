@@ -41,7 +41,10 @@ M.on_attach = function(client, bufnr)
   opts.buffer = bufnr
 
   opts.desc = 'Close current buffer'
-  vim.keymap.set('n', '<leader>p', ':bd<CR>', { silent = true }) -- Close current buffer
+  vim.keymap.set('n', '<leader>p', ':bd<CR>', opts) -- Close current buffer
+
+  opts.desc = '[T]oggle [g]it blame'
+  vim.keymap.set('n', '<leader>tg', ':GitBlameToggle<CR>', opts) -- Close current buffer
 
   opts.desc = 'Show LSP references'
   vim.keymap.set('n', 'gR', '<cmd>Telescope lsp_references<CR>', opts) -- show definition, references
