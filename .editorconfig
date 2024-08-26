@@ -1,0 +1,4 @@
+root = true
+
+[*.lua]
+format_on_save = true

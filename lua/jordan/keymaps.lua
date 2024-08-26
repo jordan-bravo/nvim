@@ -40,11 +40,8 @@ local M = {}
 M.on_attach = function(client, bufnr)
   opts.buffer = bufnr
 
-  opts.desc = 'Close current buffer'
-  vim.keymap.set('n', '<leader>p', ':bd<CR>', opts) -- Close current buffer
-
   opts.desc = '[T]oggle [g]it blame'
-  vim.keymap.set('n', '<leader>tg', ':GitBlameToggle<CR>', opts) -- Close current buffer
+  vim.keymap.set('n', '<leader>tg', ':GitBlameToggle<CR>', opts)
 
   opts.desc = 'Show LSP references'
   vim.keymap.set('n', 'gR', '<cmd>Telescope lsp_references<CR>', opts) -- show definition, references
@@ -136,6 +133,17 @@ M.on_attach = function(client, bufnr)
   -- end
   -- opts.desc = "[W]orkspace [L]ist Folders"
   -- vim.keymap.set("n", "<leader>wl", list_workspace_folders(), { buffer = bufnr, desc = opts.desc })
+
+  -- disable format-on-save based on .editorconfig
+  require('editorconfig').properties.format_on_save = function(_bufnr, val, _opts)
+    if val == 'false' then
+      print('autoformat disabled for this buffer')
+      vim.b[bufnr].disable_autoformat = true
+    else
+      print('autoformat enabled')
+      -- vim.b[bufnr].disable_autoformat = false
+    end
+  end
 end
 M.dap = {
   plugin = true,
