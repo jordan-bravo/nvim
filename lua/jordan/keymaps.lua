@@ -148,7 +148,7 @@ end
 M.dap = {
   plugin = true,
   n = {
-    ['<leader>b'] = { '<cmd> DapToggleBreakpoint <CR>' },
+    ['<leader>b'] = { '<cmd>DapToggleBreakpoint<CR>' },
   },
 }
 M.dap_python = {
