@@ -5,6 +5,7 @@ return {
       'rcarriga/nvim-dap-ui',
       'nvim-neotest/nvim-nio',
       'leoluz/nvim-dap-go',
+      'mfussenegger/nvim-dap-python',
       'mxsdev/nvim-dap-vscode-js',
       {
         'microsoft/vscode-js-debug',
@@ -36,8 +37,11 @@ return {
 
       -- [[ Langauge Specific ]]
 
-      --Go
+      -- Golang
       require('dap-go').setup()
+
+      -- Python
+      require('dap-python').setup('python')
 
       -- JavaScript / TypeScript
       require('dap-vscode-js').setup({
