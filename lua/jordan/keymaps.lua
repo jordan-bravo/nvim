@@ -1,3 +1,5 @@
+local opts = { noremap = true, silent = true }
+
 -- If highlight on search is enabled, this will clear highlight when pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -34,8 +36,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+opts.desc = 'Close buffer'
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '<cmd>bd<cr>', opts) -- close current buffer
+
 -- Buffer dependent keymaps
-local opts = { noremap = true, silent = true }
 local M = {}
 M.on_attach = function(client, bufnr)
   opts.buffer = bufnr
@@ -70,9 +74,6 @@ M.on_attach = function(client, bufnr)
 
   opts.desc = '[F]ormat-on-save [d]isable'
   vim.keymap.set({ 'n', 'v' }, '<leader>fd', '<cmd>FormatDisable<CR>', opts) -- disable format on save
-
-  opts.desc = 'Close buffer'
-  vim.keymap.set({ 'n', 'v' }, '<leader>p', '<cmd>bd<cr>', opts) -- close current buffer
 
   opts.desc = 'Smart rename'
   vim.keymap.set('n', '<leader>rs', vim.lsp.buf.rename, opts) -- smart rename
