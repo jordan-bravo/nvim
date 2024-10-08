@@ -11,7 +11,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Toggle diagnostic virtual text and virtual lines
 vim.keymap.set('n', '<leader>v', '<Plug>(toggle-lsp-diag-vtext)', { silent = true, desc = 'Toggle Virtual Text' })
-vim.keymap.set('n', '<leader>l', require('lsp_lines').toggle, { desc = 'Toggle lsp_lines' })
+-- disabled for now, see note in lsp.lua
+-- vim.keymap.set('n', '<leader>l', require('lsp_lines').toggle, { desc = 'Toggle lsp_lines' })
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 

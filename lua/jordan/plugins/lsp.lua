@@ -172,12 +172,14 @@ return {
       })
     end,
   },
-  -- lsp lines looks cool but there's a problem, it only shows the diagnostic
-  -- lines sporadically. Will observe behavior further.
-  {
-    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
-    config = function()
-      require('lsp_lines').setup()
-    end,
-  },
+  -- lsp lines looks cool but there's a problem, where it's unclear how it
+  -- interacts with virtual text. Needs further investigation to get the right
+  -- combo of starting settings (on/off) and keymaps for the interaction between
+  -- virtual text and virtual lines. For now, disabling virtual lines.
+  -- {
+  --   'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+  --   config = function()
+  --     require('lsp_lines').setup()
+  --   end,
+  -- },
 }
