@@ -168,8 +168,16 @@ return {
     'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
     config = function()
       require('toggle_lsp_diagnostics').init({
-        -- start_on = false,
+        start_on = false,
       })
+    end,
+  },
+  -- lsp lines looks cool but there's a problem, it only shows the diagnostic
+  -- lines sporadically. Will observe behavior further.
+  {
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    config = function()
+      require('lsp_lines').setup()
     end,
   },
 }
