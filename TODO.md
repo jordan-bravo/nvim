@@ -1,10 +1,11 @@
+- Surround plugin installed but doesn't seem to be working.
 - File explorer (neotree): indent markers should be lighter, matching the main buffer.
 
 ## Research
 
-- I want the ability to designate a directory as a "project" or a "workspace" (not sure which term is accurate) so that I can search for files or grep a string in that directory and all descendants. Also, when I open the file explorer, I want the top level directory to always be that "project" or "workspace" directory.
+- Need session management. First research, what are "workspaces" in the context of (neo)vim?
 
-Article explaining how to achieve this similar to VSCode: https://miguelcrespo.co/using-telescope-to-find-text-inside-paths
+Article explaining how to search with Telescope in specific directories: https://miguelcrespo.co/using-telescope-to-find-text-inside-paths
 
 - ahmedkhalf/project.nvim
   OR
