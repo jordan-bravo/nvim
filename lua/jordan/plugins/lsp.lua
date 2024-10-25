@@ -133,6 +133,11 @@ return {
           },
         },
       })
+      -- configure rust server
+      lspconfig['rust_analyzer'].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
 
       -- configure svelte server
       -- lspconfig["svelte"].setup({
