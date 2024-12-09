@@ -9,6 +9,9 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>a', vim.diagnostic.open_float, { desc = 'Show di[a]gnostic Error messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Dismiss notifications from Noice
+vim.keymap.set('n', '<leader>y', ':Noice dismiss<CR>', { desc = 'Dismiss notifications from Noice' })
+
 -- Toggle diagnostic virtual text and virtual lines
 vim.keymap.set('n', '<leader>v', '<Plug>(toggle-lsp-diag-vtext)', { silent = true, desc = 'Toggle Virtual Text' })
 -- disabled for now, see note in lsp.lua
