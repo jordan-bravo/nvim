@@ -66,12 +66,15 @@ return {
         { name = 'luasnip' },
         { name = 'buffer' }, -- text within current buffer
         { name = 'path' }, -- file system paths
+        { name = 'supermaven' }, -- supermaven llm plugin
       },
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
+          -- mode = "symbol", -- show only symbol annotations
           maxwidth = 50,
           ellipsis_char = '...',
+          symbol_map = { Supermaven = '' },
         }),
       },
     })
