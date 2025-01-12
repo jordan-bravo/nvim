@@ -30,6 +30,12 @@ return {
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
       end
 
+      -- configure c & c++ language server
+      lspconfig['ccls'].setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+      })
+
       -- configure css server
       lspconfig['cssls'].setup({
         capabilities = vle_capabilities,
