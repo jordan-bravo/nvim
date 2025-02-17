@@ -2,9 +2,9 @@
 
 ## TODO
 
-- [ ] Configure lazy.nvim
-- [ ] Configure Neotree
-- [ ] Configure Telescope
+- [x] Configure lazy.nvim
+- [x] Configure Neotree
+- [x] Configure Telescope
 - Configure language tools:
   - [x] Python
     - [x] Completions
@@ -41,8 +41,14 @@
     - [ ] Type checking
     - [ ] Formatting
     - [ ] Linting
+
+## Research
+
+Article explaining how to search with Telescope in specific directories: https://miguelcrespo.co/using-telescope-to-find-text-inside-paths
+
 - In Nix files, enable formatting with command (space, m, p).
-- Make telescope search all files, including hidden files and those listed in .gitignore. By default telescope excludes those. See [docs](https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#file-and-text-search-in-hidden-files-and-directories)
-- Choose and configure a session manager
+- Need session management. First research, what are "workspaces" in the context of (neo)vim?
   - Look into [auto-session](https://github.com/rmagatti/auto-session) with telescope integration via [session-lens](https://github.com/rmagatti/session-lens)
+  - nvim-telescope/telescope-project.nvim
+  - ahmedkhalf/project.nvim
 - Look into the plugin [neodev](https://github.com/folke/neodev.nvim), which helps editing nvim specific lua files
