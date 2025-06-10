@@ -9,13 +9,20 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagn
 vim.keymap.set('n', '<leader>a', vim.diagnostic.open_float, { desc = 'Show di[a]gnostic Error messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
+-- Toggle diagnostic virtual lines
+vim.keymap.set('n', 'gK', function()
+  local new_config = not vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({ virtual_lines = new_config })
+end, { desc = 'Toggle diagnostic virtual_lines' })
+
+-- Toggle diagnostic virtual text
+vim.keymap.set('n', '<leader>v', function()
+  local new_config = not vim.diagnostic.config().virtual_text
+  vim.diagnostic.config({ virtual_text = new_config })
+end, { silent = true, noremap = true })
+
 -- Dismiss notifications from Noice
 vim.keymap.set('n', '<leader>y', ':Noice dismiss<CR>', { desc = 'Dismiss notifications from Noice' })
-
--- Toggle diagnostic virtual text and virtual lines
-vim.keymap.set('n', '<leader>v', '<Plug>(toggle-lsp-diag-vtext)', { silent = true, desc = 'Toggle Virtual Text' })
--- disabled for now, see note in lsp.lua
--- vim.keymap.set('n', '<leader>l', require('lsp_lines').toggle, { desc = 'Toggle lsp_lines' })
 
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 

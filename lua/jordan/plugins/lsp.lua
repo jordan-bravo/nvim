@@ -175,14 +175,14 @@ return {
       })
     end,
   },
-  {
-    'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
-    config = function()
-      require('toggle_lsp_diagnostics').init({
-        start_on = true,
-      })
-    end,
-  },
+  -- {
+  --   'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
+  --   config = function()
+  --     require('toggle_lsp_diagnostics').init({
+  --       start_on = true,
+  --     })
+  --   end,
+  -- },
   -- lsp lines looks cool but there's a problem, where it's unclear how it
   -- interacts with virtual text. Needs further investigation to get the right
   -- combo of starting settings (on/off) and keymaps for the interaction between

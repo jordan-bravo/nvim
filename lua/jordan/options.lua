@@ -38,6 +38,7 @@ vim.opt.timeout = true -- whether to stop waiting for commands
 vim.opt.timeoutlen = 300 -- how long to wait before timing out
 vim.opt.completeopt = 'menuone,noselect' -- better completion experience
 vim.opt.termguicolors = true -- enable 24-bit color in the TUI
+vim.diagnostic.config({ virtual_lines = false }) -- disabling intrusive diagnostics that break the line flow
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
