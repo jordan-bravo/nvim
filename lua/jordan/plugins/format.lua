@@ -27,12 +27,12 @@ return {
   lazy = false,
   keys = {
     {
-      '<leader>fc',
+      '<leader>cfn',
       function()
         require('conform').format({ async = true, lsp_fallback = true })
       end,
       mode = '',
-      desc = '[F]ormat [c]ode in current buffer',
+      desc = '[C]ode [f]ormat [n]ow in current buffer',
     },
   },
   opts = {

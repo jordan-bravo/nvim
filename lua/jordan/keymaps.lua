@@ -49,7 +49,7 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = tr
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 opts.desc = 'Close buffer'
-vim.keymap.set({ 'n', 'v' }, '<leader>p', '<cmd>bd<cr>', opts) -- close current buffer
+vim.keymap.set({ 'n', 'v' }, '<leader>ww', '<cmd>bd<cr>', opts) -- close current buffer
 
 -- Buffer dependent keymaps
 local M = {}
@@ -78,14 +78,14 @@ M.on_attach = function(client, bufnr)
   vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
   -- Trying to set this here causes an error so instead it's set in plugins/format.lua
-  -- opts.desc = '[F]ormat [c]ode in current buffer'
-  -- vim.keymap.set({ 'n', 'v' }, '<leader>fc', require('conform').format({ async = true, lsp_fallback = true }), opts) -- run code formatter
+  -- opts.desc = '[C]ode [f]ormat [n]ow in current buffer'
+  -- vim.keymap.set({ 'n', 'v' }, '<leader>cfn', require('conform').format({ async = true, lsp_fallback = true }), opts) -- run code formatter
 
-  opts.desc = '[F]ormat-on-save [e]nable'
-  vim.keymap.set({ 'n', 'v' }, '<leader>fe', '<cmd>FormatEnable<CR>', opts) -- enable format on save
+  opts.desc = '[C]ode [f]ormat-on-save [e]nable'
+  vim.keymap.set({ 'n', 'v' }, '<leader>cfe', '<cmd>FormatEnable<CR>', opts) -- enable format on save
 
-  opts.desc = '[F]ormat-on-save [d]isable'
-  vim.keymap.set({ 'n', 'v' }, '<leader>fd', '<cmd>FormatDisable<CR>', opts) -- disable format on save
+  opts.desc = '[C]ode [f]ormat-on-save [d]isable'
+  vim.keymap.set({ 'n', 'v' }, '<leader>cfd', '<cmd>FormatDisable<CR>', opts) -- disable format on save
 
   opts.desc = 'Smart rename'
   vim.keymap.set('n', '<leader>rs', vim.lsp.buf.rename, opts) -- smart rename
